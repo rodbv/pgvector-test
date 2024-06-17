@@ -75,10 +75,10 @@ ollama pull nomic-embed-text
 
 ## Usage
 
-After installation, you can run the main script (replace `main.py` with your actual main script name):
+After installation, you can run the main script passing a query:
 
 ```bash
-python main.py
+python main.py --query "Find parts of the speech related to Brazil"
 ```
 
 ## Pulling Different Models with Ollama
