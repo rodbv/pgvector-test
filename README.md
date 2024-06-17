@@ -20,26 +20,18 @@ This project requires Python 3.6 or later. Here are the steps to set up the proj
     cd pgvector-test
     ```
 
-2. Create a virtual environment and activate it:
+1. Create a virtual environment and activate it:
     ```bash
     python3 -m venv .env
     source .env/bin/activate## Pulling Different Models with Ollama
-
-Ollama allows you to pull different models for your project. Here's how you can do it:
-
-1. First, make sure you have `ollama` installed. If not, you can install it using pip:
-    ```bash
-    pip install ollama
     ```
 
-2. Install the dependencies:
+1. Install the dependencies:
     ```bash
     pip install -r requirements.txt
     ```
 
-3. Running Postgres with pgVector support from Docker.
-
-3. Running Postgres with pgVector support from Docker.
+1. Running Postgres with pgVector support from Docker.
 
     You can run a PostgreSQL instance with `pgvector` support using Docker. Here's how you can do it:
 
