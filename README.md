@@ -12,7 +12,7 @@ The main difference between this repo and the blog post is that we're running Ol
 
 ## Installation
 
-This project requires Python 3.6 or later. Here are the steps to set up the project:
+This project requires Python 3.6 or later, and a local instance of Ollama. Here are the steps to set up the project:
 
 1. Clone the repository:
     ```bash
@@ -31,7 +31,24 @@ This project requires Python 3.6 or later. Here are the steps to set up the proj
     pip install -r requirements.txt
     ```
 
-1. Running Postgres with pgVector support from Docker.
+1. Installign Ollama locally
+
+To install Ollama locally, please refer to their documentation (it's easy stuff): [https://github.com/ollama/ollama](https://github.com/ollama/ollama).
+
+Once installed, you can start it by running the command 
+
+```
+ollama serve
+```
+
+..and then this command to get the default model we're using:
+
+```
+ollama pull nomic-embed-text
+```
+
+
+2. Running Postgres with pgVector support from Docker.
 
     You can run a PostgreSQL instance with `pgvector` support using Docker. Here's how you can do it:
 
@@ -70,7 +87,7 @@ Ollama allows you to pull different models for your project. Here's how you can 
 
 1. To pull a model, use the `ollama pull` command followed by the model name. For example, to pull the `bert-base-uncased` model, you would run:
     ```bash
-    ollama pull bert-base-uncased
+    ollama pull orca-mini
     ```
 
 2. The model will be downloaded and stored in a directory named `.ollama` in your home directory. You can use the model by passing the model name to the `run` function in `main.py`
