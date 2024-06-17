@@ -8,7 +8,7 @@ CONNECTION_STRING = "postgresql+psycopg2://postgres:pass@localhost:5432/vector_d
 COLLECTION_NAME = "state_of_union_vectors_full_text_orca_mini"
 
 
-def run(prompt: str, k: int = 2, model: str = None):
+def run(prompt: str, model: str = None):
     loader = TextLoader("state_of_the_union.txt", encoding="utf-8")
     documents = loader.load()
 
@@ -25,7 +25,7 @@ def run(prompt: str, k: int = 2, model: str = None):
         use_jsonb=True,
     )
 
-    results = db.similarity_search_with_score(prompt, k=k)
+    results = db.similarity_search_with_score(prompt, k=3)
 
     for doc in results:
         yield doc
@@ -34,7 +34,7 @@ def run(prompt: str, k: int = 2, model: str = None):
 if __name__ == "__main__":
     started_at = datetime.now()
     for result in run(
-        "Does it mention Brazil? answer with Yes or No", k=1, model="orca-mini"
+        "Which sentences refer to Brazil directly or indirectly?", model="orca-mini"
     ):
         print(result)
     elapsed = datetime.now() - started_at
