@@ -85,10 +85,10 @@ python main.py --query "Find parts of the speech related to Brazil"
 
 Ollama allows you to pull different models for your project. Here's how you can do it:
 
-1. To pull a model, use the `ollama pull` command followed by the model name. For example, to pull the `bert-base-uncased` model, you would run:
+1. To pull a model, use the `ollama pull` command followed by the model name. For example, to pull the `orca-mini` model, you would run:
     ```bash
     ollama pull orca-mini
     ```
 
-2. The model will be downloaded and stored in a directory named `.ollama` in your home directory. You can use the model by passing the model name to the `run` function in `main.py`
+2. The model will be downloaded and stored in a directory named `.ollama` in your home directory. You can use the model by passing the parameter `--model`.
 
